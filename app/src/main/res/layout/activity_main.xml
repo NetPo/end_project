@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8CB1D7"
-    android:backgroundTint="#8CB1D7"
+    android:background="#a6bdd7"
+    android:backgroundTint="#a6bdd7"
     tools:context=".MainActivity">
 
     <TextView
@@ -24,12 +24,15 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="67dp"
         android:layout_marginTop="172dp"
         android:background="@drawable/roundst"
-        android:backgroundTint="#8CB1D7"
+        android:backgroundTint="@color/grey"
+        android:fontFamily="@font/roboto_bold"
+        android:minHeight="48dp"
         android:text="@string/naming_TC"
+        android:textColor="#FFFFFF"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
@@ -41,9 +44,12 @@
         android:layout_width="155dp"
         android:layout_height="153dp"
         android:layout_marginStart="128dp"
-        android:layout_marginBottom="64dp"
+        android:backgroundTint="#A6BDD7"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.852"
         app:srcCompat="@drawable/ic_fire_svgrepo_com"
         tools:ignore="SpeakableTextPresentCheck" />
 
