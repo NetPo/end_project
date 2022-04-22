@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.app.Activity;
@@ -20,19 +21,37 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
 
     int TAG_CODE_PERMISSION_LOCATION;
+
+    ArrayList<M_RV> malls = new ArrayList<M_RV>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        setInitialData();
+        RecyclerView recyclerView = findViewById(R.id.list);
+        M_Adapter m_adapter = new M_Adapter(this, malls);
+        recyclerView.setAdapter(m_adapter);
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync((OnMapReadyCallback) this);
+    }
+
+
+    private void setInitialData(){
+        malls.add(new M_RV("Бутово Молл", "3"));
+        malls.add(new M_RV("Витте Молл", "4"));
+        malls.add(new M_RV("Бутово Молл", "3"));
+        malls.add(new M_RV("Витте Молл", "4"));
+        malls.add(new M_RV("Бутово Молл", "3"));
+        malls.add(new M_RV("Витте Молл", "4"));
     }
 
 
