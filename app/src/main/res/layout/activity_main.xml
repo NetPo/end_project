@@ -13,14 +13,15 @@
         android:layout_width="318dp"
         android:layout_height="73dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="ЗАЖИГАЛКА"
+        android:text="@string/zazhigalka"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
@@ -36,7 +37,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -48,6 +50,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_fire_svgrepo_com"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/teleph_button"
+        android:layout_width="68dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#8CB1D7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_phine_svgrepo_com"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

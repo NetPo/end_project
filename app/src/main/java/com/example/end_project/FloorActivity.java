@@ -27,7 +27,7 @@ public class FloorActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int selectedItemPosition, long selectedId) {
                 Integer[] choose = floors.clone();
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Ваш выбор: " + choose[selectedItemPosition], Toast.LENGTH_SHORT);
+                        "Выбран этаж: " + choose[selectedItemPosition], Toast.LENGTH_SHORT);
                 toast.show();
             }
 

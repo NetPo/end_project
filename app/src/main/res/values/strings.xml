@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">end_project</string>
     <string name="naming_TC">ТЦ "А-Я"</string>
+    <string name="zazhigalka">ЗАЖИГАЛКА</string>
 </resources>
