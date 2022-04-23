@@ -31,7 +31,7 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
         return new ViewHolder(view);
     }
 
-    @SuppressLint("SetTextI18n")
+    //@SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull M_Adapter.ViewHolder holder, int position) {
         M_RV m_rv = malls.get(position);
@@ -47,8 +47,8 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView nameView;
-        TextView floorView;
+        //TextView nameView;
+        //TextView floorView;
         Button info;
 
         ViewHolder(View view) {

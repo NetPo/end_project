@@ -10,6 +10,8 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -80,6 +82,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     TAG_CODE_PERMISSION_LOCATION);
         }
 
-      //  googleMap.addMarker(new MarkerOptions().position(new LatLng(55.523742, 37.517838)).title("Бутово Молл"));
+      googleMap.addMarker(new MarkerOptions().position(new LatLng(55.523742, 37.517838)).title("Бутово Молл"));
     }
 }
