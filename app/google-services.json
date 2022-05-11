@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "887531312519",
+    "project_id": "zazhigalka-4c36a",
+    "storage_bucket": "zazhigalka-4c36a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887531312519:android:070b80a9c427371763af22",
+        "android_client_info": {
+          "package_name": "com.example.end_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887531312519-9gjr3kainc8koi2h5d5v6vdgb66b038k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBWJZLhNCr_H6dyyhBhfJoxJL-Sj85wko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887531312519-9gjr3kainc8koi2h5d5v6vdgb66b038k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

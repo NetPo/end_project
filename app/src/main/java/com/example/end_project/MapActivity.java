@@ -48,12 +48,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
 
     private void setInitialData(){
-        malls.add(new M_RV("Бутово Молл", "3"));
-        malls.add(new M_RV("Витте Молл", "4"));
-        malls.add(new M_RV("Бутово Молл", "3"));
-        malls.add(new M_RV("Витте Молл", "4"));
-        malls.add(new M_RV("Бутово Молл", "3"));
-        malls.add(new M_RV("Витте Молл", "4"));
+        malls.add(new M_RV("Бутово Молл", "3", " ", " "));
+        malls.add(new M_RV("Витте Молл", "4", " ", " "));
+        malls.add(new M_RV("Columbus", "5", " ", " "));
+        malls.add(new M_RV("Ривьера", "4", " ", " "));
+        malls.add(new M_RV("Атриум", "4", " ", " "));
     }
 
 
@@ -82,6 +81,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     TAG_CODE_PERMISSION_LOCATION);
         }
 
-      googleMap.addMarker(new MarkerOptions().position(new LatLng(55.523742, 37.517838)).title("Бутово Молл"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(55.523742, 37.517838)).title("Бутово Молл"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(55.612762, 37.607191)).title("Columbus"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(55.704943, 37.641285)).title("Ривьера"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(55.663697, 37.511188)).title("РИО"));
+
+        //остальные метки добавлю потом :)
     }
 }
