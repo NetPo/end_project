@@ -2,6 +2,7 @@ package com.example.end_project;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
 
     private final LayoutInflater inflater;
     private final List<M_RV> malls;
+    private Context ctx;
 
     M_Adapter(Context context, List<M_RV> malls) {
         this.malls = malls;
@@ -28,6 +30,7 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
     @Override
     public M_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.list_item, parent, false);
+        ctx = parent.getContext();
         return new ViewHolder(view);
     }
 
@@ -36,6 +39,13 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
     public void onBindViewHolder(@NonNull M_Adapter.ViewHolder holder, int position) {
         M_RV m_rv = malls.get(position);
         holder.info.setText(m_rv.getName());
+        holder.info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent228 = new Intent(ctx, FloorActivity.class);
+                ctx.startActivity(intent228);
+            }
+        });
         //holder.nameView.setText("Название: " + m_rv.getName());
         //holder.floorView.setText("Этажей: " + m_rv.getFloors_am());
     }
