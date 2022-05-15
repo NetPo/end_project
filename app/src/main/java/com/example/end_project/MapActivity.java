@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
@@ -22,6 +23,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -32,18 +36,53 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     ArrayList<M_RV> malls = new ArrayList<M_RV>();
 
+    RecyclerView recyclerView;
+    DAOmalls dao;
+    M_Adapter m_adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        setInitialData();
-        RecyclerView recyclerView = findViewById(R.id.list);
-        M_Adapter m_adapter = new M_Adapter(this, malls);
+        //setInitialData();
+        //RecyclerView recyclerView = findViewById(R.id.list);
+        //M_Adapter m_adapter = new M_Adapter(this, malls);
+        //recyclerView.setAdapter(m_adapter);
+        recyclerView = findViewById(R.id.list);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        m_adapter = new M_Adapter(this, malls);
         recyclerView.setAdapter(m_adapter);
+        dao = new DAOmalls();
+        loadData();
+
+
+
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync((OnMapReadyCallback) this);
+    }
+
+    private void loadData() {
+        dao.get().addValueEventListener(new ValueEventListener() {
+            ArrayList<M_RV> malls = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot data: snapshot.getChildren()){
+                    M_RV m_rv = data.getValue(M_RV.class);
+                    malls.add(m_rv);
+                }
+                m_adapter.setItems(malls);
+                m_adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
 

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
@@ -23,6 +24,11 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
     M_Adapter(Context context, List<M_RV> malls) {
         this.malls = malls;
         this.inflater = LayoutInflater.from(context);
+    }
+
+
+    public void setItems(ArrayList<M_RV> nm){
+        malls.addAll(nm);
     }
 
 

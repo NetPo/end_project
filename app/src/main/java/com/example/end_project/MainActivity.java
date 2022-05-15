@@ -21,16 +21,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageButton fire = findViewById(R.id.imageButton3);
         Button btn = findViewById(R.id.buttonDAO);
-        DAOmalls dao = new DAOmalls();
-        btn.setOnClickListener(v->
-        {
-            M_RV mall = new M_RV("РИО", "7", "55.663697", "37.511188");
-            dao.add(mall).addOnSuccessListener(suc ->{
-                Toast.makeText(this, "OK", Toast.LENGTH_LONG).show();
-            }).addOnFailureListener(err ->{
-                Toast.makeText(this, "ERROR", Toast.LENGTH_LONG).show();
-            });
-        });
+        //DAOmalls dao = new DAOmalls();
+        //btn.setOnClickListener(v->
+        //{
+        //    M_RV mall = new M_RV("РИО", "7", "55.663697", "37.511188");
+        //    dao.add(mall).addOnSuccessListener(suc ->{
+        //        Toast.makeText(this, "OK", Toast.LENGTH_LONG).show();
+        //    }).addOnFailureListener(err ->{
+        //        Toast.makeText(this, "ERROR", Toast.LENGTH_LONG).show();
+        //    });
+        //});
         fire.setOnClickListener(new View.OnClickListener() {
 
             @Override

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class DAOmalls {
     private final DatabaseReference databaseReference;
@@ -15,5 +16,8 @@ public class DAOmalls {
     }
     public Task<Void> add(M_RV mall){
         return databaseReference.push().setValue(mall);
+    }
+    public Query get(){
+        return databaseReference.orderByKey();
     }
 }
