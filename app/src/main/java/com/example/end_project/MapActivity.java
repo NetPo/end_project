@@ -44,26 +44,28 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        //setInitialData();
-        //RecyclerView recyclerView = findViewById(R.id.list);
-        //M_Adapter m_adapter = new M_Adapter(this, malls);
-        //recyclerView.setAdapter(m_adapter);
+
+        //RecyclerView
         recyclerView = findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         m_adapter = new M_Adapter(this, malls);
         recyclerView.setAdapter(m_adapter);
+
+        //БД
         dao = new DAOmalls();
         loadData();
 
 
-
+        //fragment
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync((OnMapReadyCallback) this);
     }
 
+
+    //DAO
     private void loadData() {
         dao.get().addValueEventListener(new ValueEventListener() {
             ArrayList<M_RV> malls = new ArrayList<>();
@@ -86,16 +88,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
 
-    private void setInitialData(){
-        malls.add(new M_RV("Бутово Молл", "3", " ", " "));
-        malls.add(new M_RV("Витте Молл", "4", " ", " "));
-        malls.add(new M_RV("Columbus", "5", " ", " "));
-        malls.add(new M_RV("Ривьера", "4", " ", " "));
-        malls.add(new M_RV("Атриум", "4", " ", " "));
-    }
 
 
-
+    //map
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
 

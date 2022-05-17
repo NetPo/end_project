@@ -21,15 +21,18 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
     private final List<M_RV> malls;
     private Context ctx;
 
+
+
     M_Adapter(Context context, List<M_RV> malls) {
         this.malls = malls;
         this.inflater = LayoutInflater.from(context);
     }
 
 
-    public void setItems(ArrayList<M_RV> nm){
-        malls.addAll(nm);
+    public void setItems(ArrayList<M_RV> mall){
+        malls.addAll(mall);
     }
+
 
 
     @NonNull
@@ -43,12 +46,18 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
     //@SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull M_Adapter.ViewHolder holder, int position) {
+        String name;
+        String floors_am;
         M_RV m_rv = malls.get(position);
         holder.info.setText(m_rv.getName());
+        name = m_rv.getName();
+        floors_am = m_rv.getFloors_am();
         holder.info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent228 = new Intent(ctx, FloorActivity.class);
+                intent228.putExtra("Название выбранного тц", name);
+                intent228.putExtra("Количество этажей", floors_am);
                 ctx.startActivity(intent228);
             }
         });

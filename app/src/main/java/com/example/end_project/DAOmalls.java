@@ -20,4 +20,5 @@ public class DAOmalls {
     public Query get(){
         return databaseReference.orderByKey();
     }
+
 }
