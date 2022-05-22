@@ -120,6 +120,5 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         googleMap.addMarker(new MarkerOptions().position(new LatLng(55.704943, 37.641285)).title("Ривьера"));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(55.663697, 37.511188)).title("РИО"));
 
-        //остальные метки добавлю потом :)
     }
 }

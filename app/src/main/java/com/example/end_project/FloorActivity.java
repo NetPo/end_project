@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class FloorActivity extends AppCompatActivity {
 
     Integer[] floors;
+    ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,8 @@ public class FloorActivity extends AppCompatActivity {
             floors[i] = i+1;
         }
 
+        //ImageView
+        img = findViewById(R.id.imageView);
 
         //spinner
         Spinner spinner = findViewById(R.id.spinner);
@@ -45,6 +49,39 @@ public class FloorActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int selectedItemPosition, long selectedId) {
                 Integer[] choose = floors.clone();
+                switch (name) {
+                    case("Ривьера"):
+                    switch (choose[selectedItemPosition]) {
+                        case (1):
+                            img.setImageResource(R.drawable.riviera_1);
+                            break;
+                        case (2):
+                            img.setImageResource(R.drawable.riviera_2);
+                            break;
+                        case (3):
+                            img.setImageResource(R.drawable.riviera_3);
+                            break;
+                    }
+                    break;
+                    case ("Columbus"):
+                        switch (choose[selectedItemPosition]) {
+                            case (1):
+                                img.setImageResource(R.drawable.columbus_1);
+                                break;
+                            case (2):
+                                img.setImageResource(R.drawable.columbus_2);
+                                break;
+                            case (3):
+                                img.setImageResource(R.drawable.columbus_3);
+                                break;
+                            case (4):
+                                img.setImageResource(R.drawable.columbus_4);
+                                break;
+                            case (5):
+                                img.setImageResource(R.drawable.columbus_5);
+                                break;
+                        }
+                }
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Выбран этаж: " + choose[selectedItemPosition], Toast.LENGTH_SHORT);
                 toast.show();
