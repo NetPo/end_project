@@ -1,4 +1,4 @@
-package com.example.end_project;
+package com.example.end_project.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.end_project.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -81,6 +82,41 @@ public class FloorActivity extends AppCompatActivity {
                                 img.setImageResource(R.drawable.columbus5);
                                 break;
                         }
+                        break;
+                    case ("Бутово Молл"):
+                        switch (choose[selectedItemPosition]){
+                            case (1):
+                                img.setImageResource(R.drawable.bm1);
+                                break;
+                            case (2):
+                                img.setImageResource(R.drawable.bm2);
+                                break;
+                            case (3):
+                                img.setImageResource(R.drawable.bm3);
+                                break;
+                        }
+                        break;
+                    case("РИО"):
+                        switch (choose[selectedItemPosition]) {
+                            case (1):
+                                img.setImageResource(R.drawable.rio1);
+                                break;
+                            case (2):
+                                img.setImageResource(R.drawable.rio2);
+                                break;
+                            case (3):
+                                img.setImageResource(R.drawable.rio3);
+                                break;
+                            case (4):
+                                img.setImageResource(R.drawable.rio4);
+                                break;
+                            case (5):
+                                img.setImageResource(R.drawable.rio5);
+                                break;
+                            case(6):
+                                img.setImageResource(R.drawable.rio6);
+                        }
+                        break;
                 }
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Выбран этаж: " + choose[selectedItemPosition], Toast.LENGTH_SHORT);

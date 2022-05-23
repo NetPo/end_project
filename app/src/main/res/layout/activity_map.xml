@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/orange"
     android:orientation="vertical"
-    tools:context=".MapActivity">
+    tools:context=".Activities.MapActivity">
 
     <fragment
         android:id="@+id/map"

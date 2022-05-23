@@ -1,4 +1,4 @@
-package com.example.end_project;
+package com.example.end_project.Fragment;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.end_project.AClickListener;
+import com.example.end_project.Adapters.AdviceAdapter;
+import com.example.end_project.Advices;
+import com.example.end_project.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 

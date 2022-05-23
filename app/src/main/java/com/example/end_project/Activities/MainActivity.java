@@ -1,4 +1,4 @@
-package com.example.end_project;
+package com.example.end_project.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -19,15 +20,19 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.end_project.AClickListener;
+import com.example.end_project.Advices;
+import com.example.end_project.DAOmalls;
+import com.example.end_project.Fragment.BottomSheet;
+import com.example.end_project.M_RV;
+import com.example.end_project.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -147,15 +152,16 @@ public class MainActivity extends AppCompatActivity {
 
     //BottomSheet fragment
     private void openBottomSheetfragment() {
+        ;
         ArrayList<Advices> adv = new ArrayList<>();
-        adv.add(new Advices("Если Вы услышали предупреждение системы безопасности необходимо спокойно следовать к ближайшему выходу, путь отмечен специальными стрелками на пути эвакуации"));
-        adv.add(new Advices("Оказавшись в давке, согните руки в локтях и прижмите их к бокам, сжав кулаки; защищайте бока от сдавливания. Наклоните корпус назад, уперев ноги спереди, и попытайтесь сдерживать напор спиной"));
-        adv.add(new Advices("Если Вас сбили с ног, постарайтесь встать на колено и, опираясь о пол руками, другой ногой резко оттолкнитесь, рывком выпрямите тело. Заслоняйте детей спиной или посадите их к себе на плечи"));
-        adv.add(new Advices("Если Вы находитесь в момент срабатывании пожарной сигнализации в лифте, не переживайте все лифты спускаются на 1 этаж и открываются, это сделано для безопасности граждан"));
-        adv.add(new Advices("Если Вы находитесь на верхних этажах, не ждите лифт, панель будет не работоспособна, поэтому следует воспользоваться незадымляемыми лестничными клетками, эвак. выходами"));
-        adv.add(new Advices("Во время эвакуации посетителям не следует подниматься по лестницам вверх, так как дым изначально заполняет верхние этажи — нужно выйти из здания на открытую территорию"));
-        adv.add(new Advices("Если имеется возможность справиться с огнем (нет угрозы для Вашей жизни), немедленно оповестите об этом окружающих, потушите пожар, привлекая на помощь находящихся рядом людей"));
-        adv.add(new Advices("Если пути эвакуации отрезаны, постарайтесь выбраться на крышу или подойти к окнам, чтобы Вас заметили спасатели и провели эвакуацию. Не прыгайте в окно с большой высоты"));
+        adv.add(new Advices(getResources().getString(R.string.adv1)));
+        adv.add(new Advices(getResources().getString(R.string.adv2)));
+        adv.add(new Advices(getResources().getString(R.string.adv3)));
+        adv.add(new Advices(getResources().getString(R.string.adv4)));
+        adv.add(new Advices(getResources().getString(R.string.adv5)));
+        adv.add(new Advices(getResources().getString(R.string.adv6)));
+        adv.add(new Advices(getResources().getString(R.string.adv7)));
+        adv.add(new Advices(getResources().getString(R.string.adv8)));
         BottomSheet bottomSheet = new BottomSheet(adv, new AClickListener() {
             @Override
             public void clickItem(Advices advice) {

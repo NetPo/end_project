@@ -1,16 +1,18 @@
-package com.example.end_project;
+package com.example.end_project.Adapters;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.end_project.Activities.FloorActivity;
+import com.example.end_project.M_RV;
+import com.example.end_project.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class M_Adapter extends RecyclerView.Adapter<M_Adapter.ViewHolder>{
 
 
 
-    M_Adapter(Context context, List<M_RV> malls) {
+    public M_Adapter(Context context, List<M_RV> malls) {
         this.malls = malls;
         this.inflater = LayoutInflater.from(context);
     }
