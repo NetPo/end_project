@@ -66,19 +66,19 @@ public class FloorActivity extends AppCompatActivity {
                     case ("Columbus"):
                         switch (choose[selectedItemPosition]) {
                             case (1):
-                                img.setImageResource(R.drawable.columbus_1);
+                                img.setImageResource(R.drawable.columbus1);
                                 break;
                             case (2):
-                                img.setImageResource(R.drawable.columbus_2);
+                                img.setImageResource(R.drawable.columbus2);
                                 break;
                             case (3):
-                                img.setImageResource(R.drawable.columbus_3);
+                                img.setImageResource(R.drawable.columbus3);
                                 break;
                             case (4):
-                                img.setImageResource(R.drawable.columbus_4);
+                                img.setImageResource(R.drawable.columbus4);
                                 break;
                             case (5):
-                                img.setImageResource(R.drawable.columbus_5);
+                                img.setImageResource(R.drawable.columbus5);
                                 break;
                         }
                 }

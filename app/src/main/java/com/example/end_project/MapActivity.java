@@ -95,8 +95,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapReady(@NonNull GoogleMap googleMap) {
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(new LatLng(55.523742, 37.517838))
-                .zoom(15)
+                .target(new LatLng(55.752666, 37.622702))
+                .zoom(10)
                 .build();
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
         googleMap.animateCamera(cameraUpdate);
