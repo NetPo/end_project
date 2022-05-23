@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         //GPS
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
+
         //infoButton
         ImageButton infoButton = findViewById(R.id.infoButton);
         infoButton.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +85,18 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 //GEO_Data
-                Double lat_geo = Double.parseDouble(tvLocationGPS);
-                Double longt_geo = Double.parseDouble(lon);
+                Double lat_geo = 0.0;
+                Double longt_geo = 0.0;
+                String a = "8";
+                if(tvLocationGPS == null || lon == null){
+                    lat_geo = 55.710689;
+                    longt_geo =37.603403;
+                } else {
+                    lat_geo = Double.parseDouble(tvLocationGPS);
+                    longt_geo = Double.parseDouble(lon);
+                }
+                Double finalLat_geo = lat_geo;
+                Double finalLongt_geo = longt_geo;
                 Collections.sort(malls, new Comparator<M_RV>() {
                     @Override
                     public int compare(M_RV o1, M_RV o2) {
@@ -93,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
                         Double x2 = Double.parseDouble(o2.getCoord_x());
                         Double y1 = Double.parseDouble(o1.getCoord_y());
                         Double y2 = Double.parseDouble(o2.getCoord_y());
-                        Double ans1 = Math.sqrt((lat_geo-x1)*(lat_geo-x1) + (longt_geo-y1)*(longt_geo-y1));
-                        Double ans2 = Math.sqrt((lat_geo-x2)*(lat_geo-x2) + (longt_geo-y2)*(longt_geo-y2));
+                        Double ans1 = Math.sqrt((finalLat_geo -x1)*(finalLat_geo -x1) + (finalLongt_geo -y1)*(finalLongt_geo -y1));
+                        Double ans2 = Math.sqrt((finalLat_geo -x2)*(finalLat_geo -x2) + (finalLongt_geo -y2)*(finalLongt_geo -y2));
                         return ans1.compareTo(ans2);
                     }
                 });
