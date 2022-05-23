@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="wrap_content"
-    android:layout_height="200dp"
+    android:layout_height="250dp"
     android:layout_gravity="center|top"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
